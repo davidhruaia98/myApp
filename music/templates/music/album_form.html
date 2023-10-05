@@ -1,0 +1,17 @@
+{% extends 'music/Base.html' %}
+
+{% block content %}
+ <div class="container-fluid">
+     <div class="details">
+         <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+             {% csrf_token %}
+             {% for field in form %}
+                 <span class="text-danger small">{{field.errors}}</span>
+                 <label>{{field.label_tag}}</label>
+                 <div class="btn_button">{{field}}</div>
+             {% endfor %}
+             <button type="submit" class="btn btn-success">Submit</button>
+         </form>
+     </div>
+ </div>
+{% endblock %}

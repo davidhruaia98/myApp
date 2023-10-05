@@ -1,0 +1,25 @@
+{% extends 'music/Base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="box">
+
+
+
+
+     {% for album in all_albums %}
+         <div class="small_box">
+              <img class="img" src="{{ album.album_logo.url }}"><br><br><br><br>
+              <a href="{% url 'music:detail' album.id %}" class="links">{{album.album_title}}</a>
+             <div class="artist">{{album.artist}}</div>
+             <a href="{% url 'music:detail' album.id %}" class="btnindex">View Details</a>
+             <a href="{% url 'music:album-delete' album.id %}" class="delete"><span class="glyphicon glyphicon-trash"></span></a>
+             <a href="#" class="star"><img src="{% static 'music/star1.png' %}"></a>
+         </div>
+
+     {% endfor %}
+
+</div>
+
+
+{% endblock %}

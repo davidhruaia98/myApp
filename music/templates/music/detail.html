@@ -1,0 +1,22 @@
+{% extends 'music/Base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<div class="details">
+    <img class="img_3" src="{{ album.album_logo.url }}">
+
+
+    <h2>Album - {{object.album_title}}</h2>
+    <h3>Artist - {{object.artist}}</h3><br>
+    <h3>Songs</h3>
+
+    {% if error_message %}
+        <p><strong>{{error_message}}</strong></p>
+    {% endif %}
+
+</div>
+
+{% endblock %}
